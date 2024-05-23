@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>586</width>
+    <height>361</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="TabWidget">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>481</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="ToDoListTab">
+     <attribute name="title">
+      <string notr="true">今日待办事项</string>
+     </attribute>
+     <widget class="QToolButton" name="ToDoListItemAddBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加项</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListItemDelBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除项</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListItemEditBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>150</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>编辑项</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListItemInsBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>70</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>插入项</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListClrBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>清空列表</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="ToDoListWidget">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>30</y>
+        <width>391</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListItemDoneBtn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>10</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>已完成</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="ToDoListItemNotDoneBtn">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>10</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>未完成</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ToDoListLabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>131</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>待办事项列表</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="NotDoneListTab">
+     <attribute name="title">
+      <string notr="true">未完成事项</string>
+     </attribute>
+     <widget class="QToolButton" name="NotDoneListDoneBtn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>10</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>已完成</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="NotDoneListItemEditBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>修改项</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="NotDoneListClrBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>200</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>清空列表</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="NotDoneListItemToDoBtn">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>10</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>待办</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="NotDoneListItemDelBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>120</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除项</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="NotDoneListWidget">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>30</y>
+        <width>391</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="NotDoneListLabel">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>10</y>
+        <width>101</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>未完成列表</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="DoneListTab">
+     <attribute name="title">
+      <string notr="true">已完成事项</string>
+     </attribute>
+     <widget class="QToolButton" name="DoneListNotDoneBtn">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>10</y>
+        <width>41</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>未完成</string>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="DoneListWidget">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>30</y>
+        <width>391</width>
+        <height>211</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="DoneListClrBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>190</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>清空列表</string>
+      </property>
+     </widget>
+     <widget class="QToolButton" name="DoneListItemDelBtn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>60</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除项</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="DoneListLabel">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>10</y>
+        <width>71</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>已完成列表</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>586</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="ActionToDoListItemAdd">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>添加待办事项</string>
+   </property>
+  </action>
+  <action name="ActionToDoListItemInsert">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>插入待办事项</string>
+   </property>
+  </action>
+  <action name="ActionToDoListItemDelete">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>删除待办事项</string>
+   </property>
+  </action>
+  <action name="ActionToDoListItemEdit">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>修改待办事项</string>
+   </property>
+   <property name="toolTip">
+    <string>修改待办事项</string>
+   </property>
+  </action>
+  <action name="ActionToDoListClear">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>清空待办事项</string>
+   </property>
+   <property name="toolTip">
+    <string>清空待办事项</string>
+   </property>
+  </action>
+  <action name="ActionToDoListItemNotDone">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>待办事项未完成</string>
+   </property>
+   <property name="toolTip">
+    <string>待办事项未完成</string>
+   </property>
+  </action>
+  <action name="ActionToDoListItemDone">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>待办事项已完成</string>
+   </property>
+   <property name="toolTip">
+    <string>待办事项已完成</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ToDoListClrBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListClear</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>203</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemAddBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemAdd</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemInsBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemInsert</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>113</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemDelBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemDelete</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemEditBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemEdit</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>77</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemNotDoneBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemNotDone</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>392</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ToDoListItemDoneBtn</sender>
+   <signal>clicked()</signal>
+   <receiver>ActionToDoListItemDone</receiver>
+   <slot>trigger()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>482</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
