@@ -16,7 +16,6 @@
 #include <QtWidgets/QLayout>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenuBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QToolBox>
@@ -69,14 +68,14 @@ public:
     QToolButton *SelectReverseCheckStateToolButton;
     QWidget *TreeWidgetTab;
     QWidget *TableWidgetTab;
-    QMenuBar *menubar;
-    QToolBar *toolBar;
+    QToolBar *MainToolBar;
+    QToolBar *SecondaryToolBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(909, 826);
+        MainWindow->resize(764, 459);
         ActionListInt = new QAction(MainWindow);
         ActionListInt->setObjectName(QString::fromUtf8("ActionListInt"));
         ActionListInt->setCheckable(true);
@@ -112,7 +111,7 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         toolBox = new QToolBox(centralwidget);
         toolBox->setObjectName(QString::fromUtf8("toolBox"));
-        toolBox->setGeometry(QRect(0, 60, 171, 411));
+        toolBox->setGeometry(QRect(0, 0, 171, 411));
         ListWidget = new QWidget();
         ListWidget->setObjectName(QString::fromUtf8("ListWidget"));
         ListWidget->setGeometry(QRect(0, 0, 171, 333));
@@ -175,7 +174,7 @@ public:
         toolBox->addItem(TableWidget, QString::fromUtf8("QTableWidget\346\223\215\344\275\234"));
         TabWidget = new QTabWidget(centralwidget);
         TabWidget->setObjectName(QString::fromUtf8("TabWidget"));
-        TabWidget->setGeometry(QRect(170, 60, 581, 411));
+        TabWidget->setGeometry(QRect(170, 0, 591, 411));
         ListWidgetTab = new QWidget();
         ListWidgetTab->setObjectName(QString::fromUtf8("ListWidgetTab"));
         ListWidgetBox = new QListWidget(ListWidgetTab);
@@ -217,13 +216,13 @@ public:
         TableWidgetTab->setObjectName(QString::fromUtf8("TableWidgetTab"));
         TabWidget->addTab(TableWidgetTab, QString());
         MainWindow->setCentralWidget(centralwidget);
-        menubar = new QMenuBar(MainWindow);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 909, 22));
-        MainWindow->setMenuBar(menubar);
-        toolBar = new QToolBar(MainWindow);
-        toolBar->setObjectName(QString::fromUtf8("toolBar"));
-        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+        MainToolBar = new QToolBar(MainWindow);
+        MainToolBar->setObjectName(QString::fromUtf8("MainToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, MainToolBar);
+        SecondaryToolBar = new QToolBar(MainWindow);
+        SecondaryToolBar->setObjectName(QString::fromUtf8("SecondaryToolBar"));
+        MainWindow->addToolBar(Qt::TopToolBarArea, SecondaryToolBar);
+        MainWindow->insertToolBarBreak(SecondaryToolBar);
 
         retranslateUi(MainWindow);
 
@@ -321,38 +320,15 @@ public:
         ListWidgetBox->setSortingEnabled(__sortingEnabled);
 
         ListWidgetItemEditable->setText(QCoreApplication::translate("MainWindow", "\346\230\257\345\220\246\345\217\257\347\274\226\350\276\221", nullptr));
-        SelectMenuToolButton->setText(QCoreApplication::translate("MainWindow", "\344\270\213\346\213\211\350\217\234\345\215\225", nullptr));
+        SelectMenuToolButton->setText(QCoreApplication::translate("MainWindow", "\344\270\213\346\213\211\351\200\211\351\241\271", nullptr));
         SelectAllItemsToolButton->setText(QCoreApplication::translate("MainWindow", "\345\205\250\351\200\211", nullptr));
         SelectNoItemToolButton->setText(QCoreApplication::translate("MainWindow", "\345\205\250\344\270\215\351\200\211", nullptr));
         SelectReverseCheckStateToolButton->setText(QCoreApplication::translate("MainWindow", "\345\217\215\351\200\211", nullptr));
         TabWidget->setTabText(TabWidget->indexOf(ListWidgetTab), QCoreApplication::translate("MainWindow", "QListWidget", nullptr));
         TabWidget->setTabText(TabWidget->indexOf(TreeWidgetTab), QCoreApplication::translate("MainWindow", "QTreeWidget", nullptr));
         TabWidget->setTabText(TabWidget->indexOf(TableWidgetTab), QCoreApplication::translate("MainWindow", "QTableWidget", nullptr));
-        toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
-    } // retranslateUi
-
-};
-
-namespace Ui {
-    class MainWindow: public Ui_MainWindow {};
-} // namespace Ui
-
-QT_END_NAMESPACE
-
-#endif // UI_MAINWINDOW_H
-32\204Qt\347\232\204epub\346\226\207\344\273\266", nullptr));
-        QListWidgetItem *___qlistwidgetitem1 = ListWidgetBox->item(1);
-        ___qlistwidgetitem1->setText(QCoreApplication::translate("MainWindow", "\351\230\205\350\257\273Solidity\347\232\204Epub\346\226\207\344\273\266", nullptr));
-        ListWidgetBox->setSortingEnabled(__sortingEnabled);
-
-        ListWidgetItemEditable->setText(QCoreApplication::translate("MainWindow", "\346\230\257\345\220\246\345\217\257\347\274\226\350\276\221", nullptr));
-        toolButton_6->setText(QCoreApplication::translate("MainWindow", "...", nullptr));
-        SelectAllItemsToolButton->setText(QCoreApplication::translate("MainWindow", "\345\205\250\351\200\211", nullptr));
-        SelectNoItemToolButton->setText(QCoreApplication::translate("MainWindow", "\345\205\250\344\270\215\351\200\211", nullptr));
-        SelectReverseCheckStateToolButton->setText(QCoreApplication::translate("MainWindow", "\345\217\215\351\200\211", nullptr));
-        TabWidget->setTabText(TabWidget->indexOf(ListWidgetTab), QCoreApplication::translate("MainWindow", "QListWidget", nullptr));
-        TabWidget->setTabText(TabWidget->indexOf(TreeWidgetTab), QCoreApplication::translate("MainWindow", "QTreeWidget", nullptr));
-        TabWidget->setTabText(TabWidget->indexOf(TableWidgetTab), QCoreApplication::translate("MainWindow", "QTableWidget", nullptr));
+        MainToolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
+        SecondaryToolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar_2", nullptr));
     } // retranslateUi
 
 };

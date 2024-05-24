@@ -109,7 +109,7 @@ public:
         ToDoListItemInsBtn->setGeometry(QRect(20, 70, 51, 21));
         ToDoListClrBtn = new QToolButton(ToDoListTab);
         ToDoListClrBtn->setObjectName(QString::fromUtf8("ToDoListClrBtn"));
-        ToDoListClrBtn->setGeometry(QRect(20, 190, 51, 21));
+        ToDoListClrBtn->setGeometry(QRect(10, 190, 61, 21));
         ToDoListWidget = new QListWidget(ToDoListTab);
         ToDoListWidget->setObjectName(QString::fromUtf8("ToDoListWidget"));
         ToDoListWidget->setGeometry(QRect(70, 30, 391, 211));

@@ -28,6 +28,20 @@ private slots:
 
     void on_ActionItemEdit_triggered();
 
+    void setActionsForButton();
+
+    void on_ActionSelectAll_triggered();
+
+    void on_ActionAllNotSelected_triggered();
+
+    void on_ActionReverseSelected_triggered();
+
+    void createSelectionPopMenu();
+
+    void on_ActionQuit_triggered();
+
+    void on_ListWidgetBox_customContextMenuRequested(const QPoint &pos);
+
 private:
     Ui::MainWindow *ui;
 };
