@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>858</width>
     <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>照片处理器</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>image/icons/设备在线配置-2.svg</normaloff>image/icons/设备在线配置-2.svg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QScrollArea" name="ScrollArea">
@@ -39,13 +43,81 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>30</y>
         <width>401</width>
-        <height>511</height>
+        <height>491</height>
        </rect>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="SavedFileBtn">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>0</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>保存为</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="SavedFileName">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>0</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QSlider" name="ImgSlider">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>0</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="minimum">
+       <number>-1</number>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="value">
+       <number>-1</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>0</y>
+        <width>68</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>图片质量：</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="ImgSliderVal">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>0</y>
+        <width>31</width>
+        <height>21</height>
+       </rect>
       </property>
      </widget>
     </widget>
@@ -56,7 +128,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>858</width>
      <height>26</height>
     </rect>
    </property>
@@ -118,33 +190,21 @@
    </attribute>
   </widget>
   <action name="actAddFolder">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="text">
     <string>添加组合</string>
    </property>
   </action>
   <action name="actAddFiles">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="text">
     <string>添加图片</string>
    </property>
   </action>
   <action name="actDeleteItem">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="text">
     <string>删除节点</string>
    </property>
   </action>
   <action name="actScanItems">
-   <property name="checkable">
-    <bool>true</bool>
-   </property>
    <property name="text">
     <string>遍历节点</string>
    </property>
@@ -180,6 +240,16 @@
    </property>
    <property name="toolTip">
     <string>停靠区浮动性</string>
+   </property>
+  </action>
+  <action name="actZoomDe">
+   <property name="text">
+    <string>缩小显示</string>
+   </property>
+  </action>
+  <action name="actExit">
+   <property name="text">
+    <string>退出程序</string>
    </property>
   </action>
  </widget>

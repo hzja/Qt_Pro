@@ -51,6 +51,14 @@ private slots:
 
     void on_DockWid_topLevelChanged(bool topLevel);
 
+    void on_SavedFileBtn_clicked();
+
+    void on_ImgSlider_valueChanged(int NewVal);
+
+    void on_actZoomDe_triggered();
+
+    void on_actExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 

@@ -7,6 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     create_mainToolBar();
+
     LabFileName=new QLabel("");
     ui->statusbar->addWidget(LabFileName);
     this->setCentralWidget(ui->ScrollArea);
@@ -20,17 +21,23 @@ MainWindow::~MainWindow()
 
 void MainWindow::create_mainToolBar()
 {
+    //菜单栏设置
+    QMenu *mainMenuList = ui-> menubar -> addMenu("主菜单");
+    mainMenuList -> addAction(ui->actAddFiles);
+    mainMenuList -> addAction(ui->actAddFolder);
+    mainMenuList -> addSeparator();
+    mainMenuList -> addAction(ui->actExit);
+
     //主工具栏设置
-    ui -> MainToolBar ->addAction(ui->actAddFolder);
-    ui -> MainToolBar ->addAction(ui->actAddFiles);
-    ui -> MainToolBar ->addAction(ui->actScanItems);
-    ui -> MainToolBar ->addAction(ui->actDeleteItem);
+    ui -> MainToolBar -> addAction(ui->actZoomRealSize);
+    ui -> MainToolBar -> addAction(ui->actZoomIn);
+    ui -> MainToolBar -> addAction(ui->actZoomDe);
+    ui -> MainToolBar -> addAction(ui->actZoomFitH);
+    ui -> MainToolBar -> addAction(ui->actZoomFitW);
 
     //次工具栏设置
-    ui -> SecondToolBar -> addAction(ui->actZoomRealSize);
-    ui -> SecondToolBar -> addAction(ui->actZoomIn);
-    ui -> SecondToolBar -> addAction(ui->actZoomFitH);
-    ui -> SecondToolBar -> addAction(ui->actZoomFitW);
+    ui -> SecondToolBar ->addAction(ui->actScanItems);
+    ui -> SecondToolBar ->addAction(ui->actDeleteItem);
 }
 
 void MainWindow::iniTree()
@@ -64,7 +71,6 @@ void MainWindow::on_actAddFolder_triggered()
         addFolderItem(parItem,dir);//在父节点下面添加一个组节点
     }
 }
-
 
 void MainWindow::addFolderItem(QTreeWidgetItem *parItem, QString dirName)
 {
@@ -220,7 +226,6 @@ void MainWindow::on_actDeleteItem_triggered()
 void MainWindow::on_actScanItems_triggered()
 {
     //遍历节点
-    //QTreeWidgetItem *Item;
     for (int i=0;i<ui->PhotoTreeWidget->topLevelItemCount();i++)
     {
         QTreeWidgetItem *item=ui-> PhotoTreeWidget ->topLevelItem(i); //顶层节点
@@ -248,6 +253,9 @@ void MainWindow::displayImage(QTreeWidgetItem *item)
     int ScrollAreaHeight=ui-> ScrollArea ->height();//得到scrollArea的高度
     int ScrollAreaWidth=ui-> ScrollArea ->width();//得到scrollArea的宽度
     ui-> LabPic -> resize(ScrollAreaWidth,ScrollAreaHeight);
+    int ImgSliderValue = ui -> ImgSlider -> value();
+    QString ImgSliderRatio = QString::number(ImgSliderValue);
+    ui -> ImgSliderVal -> setText(ImgSliderRatio);
     on_actZoomRealSize_triggered(); //正常显示
 }
 
@@ -276,7 +284,19 @@ void MainWindow::on_actZoomFitW_triggered()
 void MainWindow::on_actZoomIn_triggered()
 {
     //放大显示
-    pixRatio=pixRatio*1.2;//在当前比例基础上乘以0.8
+    pixRatio=pixRatio*1.2;//在当前比例基础上乘以1.2
+
+    int w=pixRatio*curPixmap.width();// 显示宽度
+    int h=pixRatio*curPixmap.height();//显示高度
+
+    QPixmap pix=curPixmap.scaled(w,h);//图片缩放到指定高度和宽度，保持长宽比例
+    ui-> LabPic ->setPixmap(pix);
+}
+
+void MainWindow::on_actZoomDe_triggered()
+{
+    //缩小显示
+    pixRatio=pixRatio*0.8;//在当前比例基础上乘以0.8
 
     int w=pixRatio*curPixmap.width();// 显示宽度
     int h=pixRatio*curPixmap.height();//显示高度
@@ -294,11 +314,13 @@ void MainWindow::on_actZoomRealSize_triggered()
 
 void MainWindow::on_actDockVisible_toggled(bool arg1)
 {
+    //停靠区可见性变化的槽函数
     ui -> DockWid -> setVisible(arg1);
 }
 
 void MainWindow::on_actDockFloat_triggered(bool checked)
 {
+    //停靠区浮动性变化的槽函数
     ui -> DockWid -> setFloating(checked);
 }
 
@@ -318,6 +340,26 @@ void MainWindow::resizeEvent(QResizeEvent *event)
 {
     //重新定义QMainWindow的resizeEvent()函数，重新定义当窗口变化时的行为逻辑;
     QSize NewSize = event -> size();
+    ui -> DockWid -> resize(NewSize);
     ui -> PhotoTreeWidget -> resize(NewSize);
     ui -> ScrollArea -> resize(NewSize);
+}
+
+void MainWindow::on_SavedFileBtn_clicked()
+{
+    //保存图片，缺乏功能，还需要改进
+    QString SavedFileName = ui -> SavedFileName -> text();
+    int SavedImgQuality = ui -> ImgSlider -> value();
+    curPixmap.save(SavedFileName,nullptr,SavedImgQuality);
+}
+
+void MainWindow::on_ImgSlider_valueChanged(int NewVal)
+{
+    ui -> ImgSliderVal -> setText(QString::number(NewVal));
+}
+
+void MainWindow::on_actExit_triggered()
+{
+    //退出程序
+    this -> close();
 }
