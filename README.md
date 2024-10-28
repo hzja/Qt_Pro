@@ -79,3 +79,53 @@ windeployqt test.exe(程序名)
 - QtDebug
   [http://qtdebug.com](http://qtdebug.com/)
   我们所做的事，所写的代码，都已经被其他人做过无数次了，这里只不过是用了我们自己的方式再演绎一次，人生如戏，全靠演技。
+
++ qtcn http://www.qtcn.org
+
++ 豆子的空间 https://www.devbean.net
+
++ yafeilinux http://www.qter.org
+
++ 一去二三里 http://blog.csdn.net/liang19890820
+
++ 乌托邦2号 http://blog.csdn.net/taiyang1987912
+
++ foruok http://blog.csdn.net/foruok
+
++ jason http://blog.csdn.net/wsj18808050
+
++ 朝十晚八 http://www.cnblogs.com/swarmbees
+
++ BIG_C_GOD http://blog.csdn.net/big_c_god
+
++ 公孙二狗 https://qtdebug.com/qtbook
+
++ 雨田哥 https://blog.csdn.net/ly305750665
+
++ 郑天佐 https://blog.csdn.net/zhengtianzuo06
+
++ 寒山-居士 https://blog.csdn.net/esonpo
+
++ feiyangqingyun https://blog.csdn.net/feiyangqingyun
+
++ 前行中小猪 http://blog.csdn.net/goforwardtostep
+
++ 涛哥的知乎专栏 https://zhuanlan.zhihu.com/TaoQt
+
++ Qt君 https://blog.csdn.net/nicai_xiaoqinxi
+
++ Qt老外视频教程 http://space.bilibili.com/2592237/#!/index
+
++ Qt维基补充文档 https://wiki.qt.io/Main
+
++ Qt源码查看网站 https://code.woboq.org/qt5
+
++ Qt官方下载地址 https://download.qt.io
+
++ Qt国内镜像下载地址 https://mirrors.cloud.tencent.com/qt
+
++ 精美图表控件QWT http://qwt.sourceforge.net/
+
++ 精美图表控件QCustomPlot https://www.qcustomplot.com/
+
+  
